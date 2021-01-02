@@ -15,42 +15,56 @@ class AddressMixin(models.Model):
     address = models.CharField(
         "Direccion completa.", 
         max_length=200,
+        null=True,
+        blank=True,
     )
     address_detail = models.CharField(
         "Detalles adicionales de la direccion", 
         max_length=200, 
         null=True,
+        blank=True,
     )
     address_district = models.CharField(
         "Distrito o localidad.", 
         max_length=200, 
         null=True,
+        blank=True,
     )
     address_neighborhood = models.CharField(
         "Barrio donde esta ubicado.", 
         max_length=200,
+        null=True,
+        blank=True,
     )
     address_city = models.CharField(
         "Ciudad donde se encuentra.",
         max_length=100,
+        null=True,
+        blank=True,
     )
     address_state = models.CharField(
         "Departamento donde se encuentra.", 
         max_length=100,
+        null=True,
+        blank=True,
     )
     address_country = models.CharField(
         "Pais donde se encuentra.", 
         max_length=100, 
         default="Colombia",
+        null=True,
+        blank=True,
     )
     address_postal_code = models.CharField(
         "Codigo postal donde se encuentra ubicado.",
         max_length=100,
         null=True,
+        blank=True,
     )
     address_location_point = models.PointField(
         null=True, 
         spatial_index=True,
+        blank=True,
     )
 
     class Meta:
